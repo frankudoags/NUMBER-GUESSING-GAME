@@ -61,13 +61,13 @@ guessBtn.addEventListener('click', function(){
                 //game over --lost 
                 gameOver(false,`Game over, you lost.The correct number was ${winningNum}`);
             }
-             if(guess + 5 > winningNum && guess <winningNum || guess - 5 < winningNum && guess > winningNum) {
+             else if(guess + 5 > winningNum && guess <winningNum || guess - 5 < winningNum && guess > winningNum) {
                         //change border color 
                     guessInput.style.border = '1px solid red';
                     //clear the input
                     guessInput.value = '';
                     setMessage(`Lmao, ${guessesLeft} guesses left`, 'red');
-                    console.log(guess,winningNum);
+                    
             }
                 
                else if(guess > winningNum) {
