@@ -10,9 +10,9 @@ GAME FUNCTION:
 
 //Game values
 let min = 1,
-    max = 10,
+    max = 50,
     winningNum = getRandomNum(min, max),
-    guessesLeft = 4;
+    guessesLeft = 6;
 
     //UI values
     const   game = document.querySelector('#game'),
@@ -55,20 +55,29 @@ guessBtn.addEventListener('click', function(){
             guessesLeft -= 1;
             noOfGuesses.textContent = guessesLeft;
 
+            
+
             if(guessesLeft === 0){
                 //game over --lost 
                 gameOver(false,`Game over, you lost.The correct number was ${winningNum}`);
             }
-             else {
-                //game continues, answer is wrong
+             
+                
+               else if(guess > winningNum) {
+                            //change border color 
+                        guessInput.style.border = '1px solid red';
+                        //clear the input
+                        guessInput.value = '';
+                    setMessage(`${guess} is greater than the answer , ${guessesLeft} guesses left`, 'red');
+                }
+               else if(guess < winningNum) {
+                            //change border color 
+                        guessInput.style.border = '1px solid red';
+                        //clear the input
+                        guessInput.value = '';
+                    setMessage(`${guess} is less than the answer , ${guessesLeft} guesses left`, 'red');
+                }
 
-                //change border color 
-                guessInput.style.border = '1px solid red';
-                //clear the input
-                guessInput.value = '';
-                //tell user it was the wrong number
-                setMessage(`Guess is not correct,${guessesLeft} guesses left`,'red');
-            }
     }
 });
 
