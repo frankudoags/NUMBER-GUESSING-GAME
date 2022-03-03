@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+body {
+    background-color: #363949;
+}
+/* #7d8da1 */
+.wrapper {
+    border-radius: 10px;
+    padding: 5rem;
+    background-color: #fff;
+    box-shadow: 0, 2rem, 3rem rgba(132, 139, 200, 0.18);
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 1rem;
+    }
+}
